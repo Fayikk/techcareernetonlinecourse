@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\techcareernetonlinecourse\\TechcareerWebApi\\TechcareerWebApi.csproj": {}
+    "d:\\techcareernetonlinecourse\\TechcareerWebApi\\TechcareerWebApi.csproj": {}
   },
   "projects": {
-    "D:\\techcareernetonlinecourse\\TechcareerWebApi\\TechcareerWebApi.csproj": {
+    "d:\\techcareernetonlinecourse\\TechcareerWebApi\\TechcareerWebApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\techcareernetonlinecourse\\TechcareerWebApi\\TechcareerWebApi.csproj",
+        "projectUniqueName": "d:\\techcareernetonlinecourse\\TechcareerWebApi\\TechcareerWebApi.csproj",
         "projectName": "TechcareerWebApi",
-        "projectPath": "D:\\techcareernetonlinecourse\\TechcareerWebApi\\TechcareerWebApi.csproj",
+        "projectPath": "d:\\techcareernetonlinecourse\\TechcareerWebApi\\TechcareerWebApi.csproj",
         "packagesPath": "C:\\Users\\fayik\\.nuget\\packages\\",
-        "outputPath": "D:\\techcareernetonlinecourse\\TechcareerWebApi\\obj\\",
+        "outputPath": "d:\\techcareernetonlinecourse\\TechcareerWebApi\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

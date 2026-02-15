@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using TechcareerWebApi.DTOs;
@@ -12,8 +13,10 @@ namespace TechcareerWebApi.Controllers
     public class EnrollmentController : ControllerBase
     {
         private readonly ApplicationDbContext _context;
-        public EnrollmentController(ApplicationDbContext context)
+        private readonly IHttpContextAccessor httpContextAccessor;
+        public EnrollmentController(ApplicationDbContext context,IHttpContextAccessor httpContextAccessor)
         {
+            this.httpContextAccessor = httpContextAccessor;
             _context = context;
         }
 
@@ -21,10 +24,11 @@ namespace TechcareerWebApi.Controllers
         [HttpPost]
         public async Task<IActionResult> Enroll(EnrollmentDTO enrollmentDTO)
         {
+            var userId = HttpContext.User.FindFirst(ClaimTypes.NameIdentifier).Value.ToString();
             Enrollment enrollment = new()
             {
                 CourseId = enrollmentDTO.CourseId,
-                StudentId = enrollmentDTO.StudentId,
+                StudentId = Guid.Parse(userId) ,
             };
 
             await _context.Enrollments.AddAsync(enrollment);

@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -14,8 +15,10 @@ namespace TechcareerWebApi.Controllers
     public class CourseController : ControllerBase
     {
         private readonly ApplicationDbContext _context;
-        public CourseController(ApplicationDbContext context)
+        private readonly IHttpContextAccessor _contextAccessor;
+        public CourseController(ApplicationDbContext context, IHttpContextAccessor contextAccessor)
         {
+            _contextAccessor = contextAccessor; 
             _context = context;
         }
 
@@ -46,6 +49,9 @@ namespace TechcareerWebApi.Controllers
         [HttpGet]
         public async Task<IActionResult> GetCourses()
         {
+
+            // var userId = HttpContext.User.FindFirst(ClaimTypes.NameIdentifier).Value.ToString();
+           var userId = _contextAccessor.HttpContext?.User?.FindFirstValue(ClaimTypes.NameIdentifier);
             List<Course> courses = await _context.Courses.ToListAsync();
             if(courses.Count > 0)
             {
