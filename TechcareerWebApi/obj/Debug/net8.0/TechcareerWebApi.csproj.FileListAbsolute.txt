@@ -150,3 +150,4 @@ D:\techcareernetonlinecourse\TechcareerWebApi\bin\Debug\net8.0\runtimes\win\lib\
 D:\techcareernetonlinecourse\TechcareerWebApi\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
 D:\techcareernetonlinecourse\TechcareerWebApi\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
 D:\techcareernetonlinecourse\TechcareerWebApi\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\techcareernetonlinecourse\TechcareerWebApi\obj\Debug\net8.0\TechcareerWebApi.sourcelink.json

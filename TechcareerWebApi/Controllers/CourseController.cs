@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using TechcareerWebApi.Entities;
@@ -19,6 +20,7 @@ namespace TechcareerWebApi.Controllers
         }
 
        [HttpPost]
+       [Authorize(Roles = "Admin")]
        public async Task<IActionResult> CreateCourse(CourseDTO courseDTO)
         {
 
@@ -44,7 +46,7 @@ namespace TechcareerWebApi.Controllers
         [HttpGet]
         public async Task<IActionResult> GetCourses()
         {
-            List<Course> courses = await _context.Courses.Include(x=>x.Lessons).ToListAsync();
+            List<Course> courses = await _context.Courses.ToListAsync();
             if(courses.Count > 0)
             {
                 return Ok(courses);
